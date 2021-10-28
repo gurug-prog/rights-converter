@@ -7,8 +7,7 @@ class Program
         // rw(Ssx)rw(Ssx)rw(Ttx)
         if (args.Length != 1)
         {
-            Console.Error.WriteLine("You have entered too many or less than needed arguments.");
-            return;
+            throw new ArgumentException("You have entered too many or less than needed arguments.");
         }
 
         var rightsExpr = args[0];
@@ -17,8 +16,7 @@ class Program
 
         if (!isRightsCorrect)
         {
-            Console.Error.WriteLine("Invalid rights format.");
-            return;
+            throw new FormatException("Invalid rights format.");
         }
 
         var rightsConverted = new Object();
